@@ -6,23 +6,65 @@ body {
     height: 100vh;
     margin: 0;
   }
-  .wheel {
-    width: 300px;
-    height: 300px;
-    border: 10px solid #333;
+
+  .piechart {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     position: relative;
-    animation: rotate 5s infinite linear;
-  }
-  .wheel::before {
-    content: "";
+    background-image: conic-gradient(
+        pink 0 72deg,
+        lightblue 72deg 144deg,
+        orange 144deg 216deg,
+        red 216deg 288deg,
+        yellow 288deg
+    );
+    color: whitesmoke;
+}
+@keyframes row {
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(72deg);
+    }
+    60%{
+        transform: rotate(144deg);
+    }
+    80%{
+        transform: rotate(288deg);
+    }
+    90%{
+        transform: rotate(3000deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.piechart h1{
     position: absolute;
     top: 50%;
+    bottom: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background-color: #333;
-    border-radius: 50%;
-    z-index: 1;
-  }
+    right: 50%;
+}
+.piechart h1:first-child{
+    top: 1rem;
+    left: 8rem;
+}
+.piechart h1:nth-child(2){
+    top: 5rem;
+    left: 10rem;
+}
+.piechart h1:nth-child(3){
+    top: 8rem;
+    left: 6rem;
+}
+.piechart h1:nth-child(4){
+    top: 5rem;
+    left: 2rem;
+}
+.piechart h1:nth-child(5){
+    top: 1rem;
+    left: 2.5rem;
+}

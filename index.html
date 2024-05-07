@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Wheel</title>
-</head>
-<body>
-  <div class="wheel">
-    <div class="pin"></div>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pie Chart</title>
+  </head>
+  <body>
+    <div class="piechart">
+      <h1>1</h1>
+      <h1>2</h1>
+      <h1>3</h1>
+      <h1>4</h1>
+      <h1>5</h1>
+    </div>
+    <button>spin</button>
+  </body>
 </html>
+
+<script>
+  const button = document.querySelector("button");
+  const piechart = document.querySelector(".piechart");
+
+  button.addEventListener("click", () => {
+    piechart.style.animation = " row infinite 0.2s ease-out";
+  });
+</script>
