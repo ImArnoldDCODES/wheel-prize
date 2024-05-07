@@ -8,7 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Pie Chart</title>
+    <title>Spin The Wheel</title>
   </head>
   <body>
     <div class="piechart">
@@ -19,20 +19,24 @@
       <h1>5</h1>
     </div>
     <button class="start">spin</button>
-    <button class="pause">pause</button>
   </body>
 </html>
 
 <script>
-  const start = document.querySelector(".start");
-  const pause = document.querySelector(".pause");
-  const piechart = document.querySelector(".piechart");
+  document.addEventListener("DOMContentLoaded", () => {
+    const startButton = document.querySelector(".start");
+    const piechart = document.querySelector(".piechart");
+    const numbers = document.querySelectorAll(".piechart h1");
 
-  start.addEventListener("click", () => {
-    piechart.style.animation = " row infinite 0.2s ease-out";
-  });
+    let totatlRotation = 0;
 
-  pause.addEventListener("click", () => {
-    piechart.style.animation = "none";
+    startButton.addEventListener("click", () => {
+      let randomStop = Math.floor(Math.random() * numbers.length);
+      let rotation =
+        360 * 5 + (360 / numbers.length) * randomStop + totatlRotation;
+      totatlRotation = rotation;
+      piechart.style.transition = "transform 5s ease-out";
+      piechart.style.transform = `rotate(${rotation}deg)`;
+    });
   });
 </script>
