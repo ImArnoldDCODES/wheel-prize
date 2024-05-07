@@ -18,15 +18,21 @@
       <h1>4</h1>
       <h1>5</h1>
     </div>
-    <button>spin</button>
+    <button class="start">spin</button>
+    <button class="pause">pause</button>
   </body>
 </html>
 
 <script>
-  const button = document.querySelector("button");
+  const start = document.querySelector(".start");
+  const pause = document.querySelector(".pause");
   const piechart = document.querySelector(".piechart");
 
-  button.addEventListener("click", () => {
+  start.addEventListener("click", () => {
     piechart.style.animation = " row infinite 0.2s ease-out";
+  });
+
+  pause.addEventListener("click", () => {
+    piechart.style.animation = "none";
   });
 </script>
